@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GTM Test Page</title>
+
+    <!-- Google Tag Manager -->
+    <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5HPC395S');
+    </script>
+    <!-- End Google Tag Manager -->
+
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5HPC395S"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<h1>My GTM Test Page</h1>
+<button id="testButton">Click Me!</button>
+
+<!-- Message area -->
+<p id="messageArea" style="color:green; font-weight:bold;"></p>
+
+<script>
+    // Click listener
+    document.getElementById("testButton").addEventListener("click", function(){
+        console.log("Button clicked!");
+
+        // Push event into GTM's dataLayer
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: "button_click",
+            button_name: "Test Button"
+        });
+
+        // Show confirmation message on page
+        document.getElementById("messageArea").textContent = "✅ Button has been clicked!";
+    });
+</script>
+
+</body>
+</html>
